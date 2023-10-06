@@ -1,0 +1,134 @@
+
+    Commandes de fichiers:
+
+    ls – liste des annuaires
+    ls -al – liste formatée avec des fichiers cachés
+    cd dir - changement de directory pour dir
+    cd – déplacement
+    pwd – afficher le directory actuel
+    mkdir dir – créer un directory dir
+    rm file – supprime le fichier
+    rm -r dir – supprime le directory
+    rm -f file – force supprimer le fichier
+    cp file1 file2 – copie file1 à fichier2
+    cp -r dir1 dir2 - copier dir1 à dir2; créer dir2 si elle n'existe pas
+    mv file1 file2 – renommer ou déplacer file1 vers file2 si file2 est un répertoire existant, déplace le file1 dans le fichier de répertoire2
+    touch file – créer ou mettre à jour un fichier
+    cat > file – place la saisie standard dans le fichier
+    more file – produire le contenu du fichier
+    head file – sortie des 10 premières lignes de fichier
+    tail file – sortie des 10 dernières lignes de fichier
+    tail -f file – afficher le contenu du fichier au fur et à mesure de sa croissance, en commençant par les 10 dernières lignes
+
+Gestion des projets :
+
+    ps – affichez vos processus actuellement actifs
+    top – afficher tous les processus en cours d'exécution
+    kill pid – kill process id pid
+    killall proc – tuer tous les processus nommés proc
+    bg – listes arrêtées ou emplois de base; reprendre un emploi arrêté en arrière-plan
+    fg – met au premier plan le plus récent
+    fg n – apporte le travail n au premier plan
+
+Autorisations de dossier :
+
+    chmod octal file – changez les autorisations de fichier en octal, qui peuvent être trouvées séparément pour l'utilisateur, le groupe et le monde en ajoutant:
+    4 – lire (r)
+    2 – écrire (w)
+    1 – exécuter (x)
+
+Exemples:
+
+    chmod 777 – lire, écrire, exécuter pour tous
+    chmod 755 – rwx pour le propriétaire, rx pour le groupe et le monde
+
+SSH :
+
+    ssh user@host – se connecter à l'hôte en tant qu'utilisateur
+    ssh -p port user@host - connecter à l'hôte sur le port de port en tant qu'utilisateur
+    ssh-copy-id user@host – ajoutez votre clé à l'hôte pour l'utilisateur afin d'activer une connexion à clé ou sans mot de passe
+
+Recherche:
+
+    grep pattern files – recherche de motif dans des fichiers
+    grep -r pattern dir –  recherche récurivement pour le modèle en dir
+    command | grep pattern – recherche de motifs dans la sortie de la commande
+    locate file – trouver toutes les instances du fichier
+
+Informations sur le système:
+
+    date – indiquer la date et l'heure actuelles
+    Cal – montrer le calendrier de ce mois-ci
+    uptime – afficher le temps de disponibilité actuel
+    w – afficher qui est en ligne
+    whoami – comment on est connecté 
+    finger user –  afficher des informations sur l'utilisateur
+    uname -a – afficher des informations sur le noyau
+    cat /proc/cpuinfo – informations sur le cpu
+    cat /proc/meminfo – informations de mémoire
+    man command – afficher le manuel de commande
+    df –  Indiquer l'utilisation du disque
+    du – utilisation de l'espace d'affichage dans l'espace d'affichage
+    free – utilisation de la mémoire et des swaps 
+    whereis app – l''application de l'endroit où se trouve l'application possible
+    which app – montrer quelle application sera exécutée par défaut
+
+Raccourcis:
+
+    Ctrl+C – arrête la commande actuelle
+    Ctrl+Z – arrête la commande en cours, reprend avec fg au premier plan ou bg en arrière-plan
+    Ctrl+D – déconnectez-vous de la session en cours, à l'instar de la sortie
+    Ctrl+W – efface un mot dans la ligne actuelle
+    Ctrl+U – efface toute la ligne
+    Ctrl+R – type pour mettre en avant une commande récente
+    !! - répéter la dernière commande
+    exit – déconnectation de la session en cours
+
+2ème:
+
+    SU user : change de user
+    CD - : va dans le répertoire précèdent
+    PS : affiche les processus actif sur le système
+    SUDO ADDUSER nom : lance le script de création de compte
+    CHOWN utilisateur FICHIER(s) : change le propriétaire d’un fichier
+    CHGRP groupe file.txt : Changez le groupe propriétaire du fichier file.txt pour le groupe « groupe »
+    GROUPADD group: créer un nouveau groupe
+    Kill : permet de forcer un processus à quitter
+    ARP : pour manipuler les ARP (adresse résolution protocol) sur ton pc
+    IP ADDR ou IFCONFIG : voir les informations de configuration des interfaces de la machine
+    ROUTE : voir la table de routage
+    TRACEROUTE ip : suit les chemin d’un paquer vers une ip
+    NETSTAT : affiche les information réseau sur ton pc
+    SSH : se connecter un ordinateur distant de manière crypté
+    TELNET : la mm que ssh saut pas sécuriser
+
+Installation de programmes :
+
+    sudo yum install emacs : install yum on centOs
+    sudo apt-get install emacsinstall yum on ubuntu
+    yum/apt update : sert à mettre à jour la liste des paquets disponibles dans les dépôts (repositories) de votre distribution Linux
+    yum list installed ou dpkg –list : ister les programmes installés sur votre machine
+
+Question :
+
+    Dans quel répertoire trouve-t'on généralement les fichiers de configuration des services? : /ect
+    Dans quel répertoire trouve-t'on généralement les fichiers des utilisateurs? : /home
+    Dans quel répertoire trouve-t'on généralement les fichiers spéciaux relatifs aux périphériques? /dev
+    Les logs du système ? /var/log
+    Pourquoi parle-t’on de repository dans le cadre des gestionnaires de paquets ? elle fait référence à un emplacement centralisé où sont stockés les fichiers binaires et les métadonnées des logiciels disponibles pour une distribution Linux donnée (c’est pas la que que les lovicies se mette a jours ou se tellecharge)
+
+Fichier linux :
+
+    /etc/networks : Liste de noms de réseaux et adresses IP associées.
+    /etc/hosts : Associe des noms d'hôtes à des adresses IP localement.
+    /etc/host.conf : Définit l'ordre de résolution des noms d'hôtes.
+    /etc/resolv.conf : Configuration pour la résolution DNS.
+    /etc/services : Répertorie les noms de services réseau et les numéros de port.
+    /etc/sysconfig : Contient des fichiers de configuration système.
+    /etc/default/useradd : Options par défaut pour la création d'utilisateurs.
+    /etc/passwd : Stocke les informations sur les utilisateurs du système.
+    /etc/shadow : Stocke les mots de passe chiffrés de manière sécurisée.
+    /etc/group : Informations sur les groupes d'utilisateurs.
+    /etc/fstab : Configure les systèmes de fichiers montés au démarrage.
+    /etc/rsyslog.conf : Configuration pour la journalisation système rsyslog.
+    /etc/sudoers : Spécifie les autorisations d'exécution des commandes avec "sudo". 
